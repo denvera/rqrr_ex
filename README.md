@@ -14,7 +14,7 @@ Add `rqrr_ex` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:rqrr_ex, "~> 0.1.0"}
+    {:rqrr_ex, "~> 0.1.0-rc.0"}
   ]
 end
 ```
@@ -39,8 +39,5 @@ Detect and decode QR codes from a file supported by the Rust [image](https://cra
 
 ```
 
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/rqrr_ex](https://hexdocs.pm/rqrr_ex).
+Documentation can be found at [https://hexdocs.pm/rqrr_ex](https://hexdocs.pm/rqrr_ex).
 

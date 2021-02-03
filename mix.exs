@@ -4,7 +4,7 @@ defmodule RqrrEx.MixProject do
   def project do
     [
       app: :rqrr_ex,
-      version: "0.1.0",
+      version: "0.1.0-rc.0",
       compilers: [:rustler] ++ Mix.compilers(),
       rustler_crates: [
         rqrr_ex_nif: [
@@ -43,7 +43,7 @@ defmodule RqrrEx.MixProject do
   defp package() do
     [
       # This option is only needed when you don't want to use the OTP application name
-      name: "postgrex",
+      name: "rqrr_ex",
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/denvera/rqrr_ex"}
     ]
