@@ -37,7 +37,7 @@ defmodule RqrrEx.MixProject do
   end
 
   defp description() do
-    "Simple binding to allow using Rust rqrr crate from Elixir. Uses Rustler for bindings."
+    "Simple binding to read QR codes using Rust rqrr crate. Uses Rustler for bindings."
   end
 
   defp package() do
@@ -45,6 +45,7 @@ defmodule RqrrEx.MixProject do
       # This option is only needed when you don't want to use the OTP application name
       name: "rqrr_ex",
       licenses: ["MIT"],
+      files: ~w(lib .formatter.exs mix.exs README* native/rqrr_ex_nif/Cargo* native/rqrr_ex_nif/src),
       links: %{"GitHub" => "https://github.com/denvera/rqrr_ex"}
     ]
   end
