@@ -4,7 +4,7 @@ defmodule RqrrEx.MixProject do
   def project do
     [
       app: :rqrr_ex,
-      version: "0.1.0-rc.1",
+      version: "0.1.0-rc.2",
       compilers: [:rustler] ++ Mix.compilers(),
       rustler_crates: [
         rqrr_ex_nif: [
