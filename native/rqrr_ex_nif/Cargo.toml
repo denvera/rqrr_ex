@@ -1,0 +1,15 @@
+[package]
+name = "rqrr_ex_nif"
+version = "0.1.0"
+authors = []
+edition = "2018"
+
+[lib]
+name = "rqrr_ex_nif"
+path = "src/lib.rs"
+crate-type = ["dylib"]
+
+[dependencies]
+rustler = "0.22.0-rc.0"
+image = "0.23.12"
+rqrr = "0.3.0"
