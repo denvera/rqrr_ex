@@ -34,6 +34,6 @@ defmodule RqrrEx do
       ]}
 
   """
-  @spec detect_qr_codes(binary()) :: [{:ok, {%RqrrEx.Metadata{}, String.t()}} | {:error, String.t()}]
+  @spec detect_qr_codes(binary()) :: [{:ok, {%RqrrEx.Metadata{}, String.t()}} | {:error, String.t()}] | {:error, String.t()}
   def detect_qr_codes(_image_bytes), do: :erlang.nif_error(:nif_not_loaded)
 end
