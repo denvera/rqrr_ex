@@ -4,14 +4,14 @@ use rustler::{Binary,NifStruct};
 
 
 #[derive(Debug, NifStruct, Clone)]
-#[module = "Rqrr.Point"]
+#[module = "RqrrEx.Point"]
 pub struct Point {
     pub x: i32,
     pub y: i32,
 }
 
 #[derive(Debug, NifStruct, Clone)]
-#[module = "Rqrr.Metadata"]
+#[module = "RqrrEx.Metadata"]
 pub struct MetaData {
     /// The version/size of the grid
     pub version: usize,
@@ -37,15 +37,19 @@ fn detect_qr_codes(bytes: Binary) -> Result<Vec<Result<(MetaData, String), Strin
             for grid in grids.iter() {
                 match grid.decode() {
                     Ok((meta, content)) => {
-                        results.push(Ok((
-                            MetaData {
-                                version: meta.version.to_size(),
-                                ecc_level: meta.ecc_level,
-                                mask: meta.mask,
-                                bounds: grid.bounds.iter().map(|b| (b.x, b.y)).collect(),
-                            },
-                            content,
-                        )));
+                        results.push(
+                            Ok(
+                                (
+                                MetaData {
+                                    version: meta.version.to_size(),
+                                    ecc_level: meta.ecc_level,
+                                    mask: meta.mask,
+                                    bounds: grid.bounds.iter().map(|b| (b.x, b.y)).collect(),
+                                },
+                                content,
+                                )
+                            )
+                        );
                     }
                     Err(error) => {
                         results.push(Err(error.to_string()));
