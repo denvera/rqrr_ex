@@ -4,13 +4,8 @@ defmodule RqrrEx.MixProject do
   def project do
     [
       app: :rqrr_ex,
-      version: "0.1.0-rc.3",
-      compilers: [:rustler] ++ Mix.compilers(),
-      rustler_crates: [
-        rqrr_ex_nif: [
-          mode: (if Mix.env() == :prod, do: :release, else: :debug)
-        ]
-      ],
+      version: "0.1.0-rc.4",
+      compilers: Mix.compilers(),
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
       description: description(),
