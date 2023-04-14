@@ -4,9 +4,9 @@ defmodule RqrrEx.MixProject do
   def project do
     [
       app: :rqrr_ex,
-      version: "0.1.1",
+      version: "0.1.2",
       compilers: Mix.compilers(),
-      elixir: "~> 1.10",
+      elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
@@ -26,7 +26,7 @@ defmodule RqrrEx.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.22.0"},
+      {:rustler, "~> 0.27.0"},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false}
     ]
   end
@@ -40,7 +40,8 @@ defmodule RqrrEx.MixProject do
       # This option is only needed when you don't want to use the OTP application name
       name: "rqrr_ex",
       licenses: ["MIT"],
-      files: ~w(lib .formatter.exs mix.exs README* native/rqrr_ex_nif/Cargo* native/rqrr_ex_nif/src),
+      files:
+        ~w(lib .formatter.exs mix.exs README* native/rqrr_ex_nif/Cargo* native/rqrr_ex_nif/src),
       links: %{"GitHub" => "https://github.com/denvera/rqrr_ex"}
     ]
   end
