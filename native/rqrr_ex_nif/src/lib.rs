@@ -5,9 +5,9 @@ use rustler::{Binary, NifStruct};
 #[derive(Debug, NifStruct, Clone)]
 #[module = "RqrrEx.Metadata"]
 pub struct MetaData {
-    /// The four boundary points of the QR Code
+    /// The version of the QR Code, between 1 and 40
     pub version: usize,
-    /// The four boundary points of the QR Code
+    /// The number of modules of the QR Code, between 21 and 177
     pub modules: usize,
     /// the error correction leven, between 0 and 3
     pub ecc_level: u16,
